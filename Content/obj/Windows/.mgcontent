@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/desert.png</File>
+    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/hellscape.png</File>
+    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/jungle.png</File>
+    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/lush.png</File>
+    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/mountain.png</File>
+    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/snow.png</File>
+    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/twilight.png</File>
+    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/Arial.spritefont</File>
+    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/UI/blackBar.png</File>
+    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/UI/hide.png</File>
+    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/UI/show.png</File>
+  </SourceFiles>
+</SourceFileCollection>
