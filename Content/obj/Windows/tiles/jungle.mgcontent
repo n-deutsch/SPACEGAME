@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/jungle.png</SourceFile>
-  <SourceTime>2018-06-08T17:56:28.1160532-07:00</SourceTime>
-  <DestFile>C:/CUSTOM SOFTWARE/SPACEGAME/Content/bin/Windows/tiles/jungle.xnb</DestFile>
-  <DestTime>2018-06-08T17:57:07.5442212-07:00</DestTime>
+  <SourceFile>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/tiles/jungle.png</SourceFile>
+  <SourceTime>2018-08-10T17:11:14.4930311-07:00</SourceTime>
+  <DestFile>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/bin/Windows/tiles/jungle.xnb</DestFile>
+  <DestTime>2018-08-10T17:12:33.4039213-07:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T07:05:36-08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

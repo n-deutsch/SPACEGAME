@@ -4,16 +4,18 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/desert.png</File>
-    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/hellscape.png</File>
-    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/jungle.png</File>
-    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/lush.png</File>
-    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/mountain.png</File>
-    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/snow.png</File>
-    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/twilight.png</File>
-    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/Arial.spritefont</File>
-    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/UI/blackBar.png</File>
-    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/UI/hide.png</File>
-    <File>C:/CUSTOM SOFTWARE/SPACEGAME/Content/UI/show.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/Arial.spritefont</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/UI/blackBar.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/UI/hide.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/UI/show.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/UI/housing.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/tiles/desert.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/tiles/hellscape.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/tiles/jungle.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/tiles/lush.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/tiles/mountain.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/tiles/snow.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/tiles/twilight.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/UI/crosshair.png</File>
   </SourceFiles>
 </SourceFileCollection>

@@ -11,15 +11,16 @@ namespace SPACEGAME
 {
     class TextureManager
     {
-        public List<Texture2D> tileTextures = new List<Texture2D>();
-        public List<SpriteFont> fonts = new List<SpriteFont>();
-        public List<Texture2D> UI = new List<Texture2D>();
+        public List<Texture2D> tileTextures;
+        public List<SpriteFont> fonts;
+        public List<Texture2D> UI;
+        public Texture2D crosshair;
 
         public TextureManager()
         {
-            tileTextures.Clear();
-            fonts.Clear();
-            UI.Clear();
+            tileTextures = new List<Texture2D>();
+            fonts = new List<SpriteFont>();
+            UI = new List<Texture2D>();
         }
     }
 }

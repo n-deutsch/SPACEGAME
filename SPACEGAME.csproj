@@ -41,6 +41,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Action.cs" />
+    <Compile Include="ActionManager.cs" />
     <Compile Include="Biome.cs" />
     <Compile Include="DateTime.cs" />
     <Compile Include="Game1.cs" />

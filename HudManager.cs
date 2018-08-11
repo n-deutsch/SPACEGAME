@@ -13,11 +13,13 @@ namespace SPACEGAME
     {
         private List<HudText> texts;
         private List<HudGraphic> graphics;
+        private bool showing;
 
         public HudManager(TextureManager TM)
         {
             texts = new List<HudText>();
             graphics = new List<HudGraphic>();
+            showing = true;
             startup(TM);
         }
 
@@ -25,29 +27,42 @@ namespace SPACEGAME
         private void startup(TextureManager TM)
         {
             //GRAPHICS
+
             //create show/hide button
-            HudGraphic showHide = new HudGraphic(new Vector2(1240, 0), VISIBILITY.SHOWING, TM.UI[0]);
-            //create bottom bar
-            HudGraphic bottomBar = new HudGraphic(new Vector2(0,700), VISIBILITY.SHOWING, TM.UI[2]);
+            HudGraphic showHide = new HudGraphic(new Vector2(1200, 0), new Vector2(80, 20), VISIBILITY.SHOWN, ORIENTATION.TOP, TM.UI[1], new showHide());
+
             //create top bar
-            HudGraphic topBar = new HudGraphic(new Vector2(0, 0), VISIBILITY.SHOWING, TM.UI[2]);
+            //HudGraphic topBar = new HudGraphic(new Vector2(0, 0), new Vector2(1280,20), VISIBILITY.SHOWN, ORIENTATION.TOP, TM.UI[2]);
+
+            //housing submenu icon
+            HudGraphic housing = new HudGraphic(new Vector2(0, 0), new Vector2(40, 20), VISIBILITY.SHOWN, ORIENTATION.TOP, TM.UI[3], new doNothing());
+
+
+
+            //create bottom bar
+            HudGraphic bottomBar = new HudGraphic(new Vector2(0, 700), new Vector2(1280, 20), VISIBILITY.SHOWN, ORIENTATION.BOTTOM, TM.UI[2], new doNothing());
 
             graphics.Add(showHide);
             graphics.Add(bottomBar);
-            graphics.Add(topBar);
+            //graphics.Add(topBar);
+            graphics.Add(housing);
 
 
             //TEXT
             //current date
-            HudText day = new HudText(new Vector2(150,702), VISIBILITY.SHOWING, TM.fonts[0], "date");
+            HudText day = new HudText(new Vector2(150,702), new Vector2(100,20), VISIBILITY.SHOWN, ORIENTATION.BOTTOM, TM.fonts[0], "date", new doNothing());
             //camera position
-            HudText camera = new HudText(new Vector2(0,702), VISIBILITY.SHOWING, TM.fonts[0], "camx, camy");
+            HudText camera = new HudText(new Vector2(0,702), new Vector2(100,20), VISIBILITY.SHOWN, ORIENTATION.BOTTOM, TM.fonts[0], "camx, camy", new doNothing());
 
             texts.Add(day);
             texts.Add(camera);
-
-            hide();
         }
+
+        public void setShowing(bool sho)
+        { showing = sho; }
+
+        public bool getShowing()
+        { return showing; }
 
         public List<HudText> getText()
         { return texts; }
@@ -69,8 +84,8 @@ namespace SPACEGAME
             //show all text
             for (i = 0; i < texts.Count; i++)
             {
-                if (graphics[i].getState() != VISIBILITY.SHOWN)
-                { graphics[i].show(); }
+                if (texts[i].getState() != VISIBILITY.SHOWN)
+                { texts[i].show(); }
             }
         }
 
@@ -89,9 +104,26 @@ namespace SPACEGAME
             //hide all text
             for (i = 0; i < texts.Count; i++)
             {
-                if (graphics[i].getState() != VISIBILITY.HIDDEN)
-                { graphics[i].hide(); }
+                if (texts[i].getState() != VISIBILITY.HIDDEN)
+                { texts[i].hide(); }
             }
+        }
+
+        public void update()
+        {
+            if (showing == true)
+            { show(); }
+            else
+            { hide(); }
+        }
+
+        public void changeText(int camx, int camy, int day)
+        {
+            string position = "(" + camx + "," + camy + ")";
+            texts[0].setText(position);
+
+            string date = "Day " + day;
+            texts[1].setText(date);
         }
 
         public int hudTextCount()

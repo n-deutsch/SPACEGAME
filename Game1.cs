@@ -6,6 +6,7 @@ namespace SPACEGAME
 {
     public enum DIRECTION { NONE, NORTH, SOUTH, EAST, WEST };
     public enum VISIBILITY { HIDDEN, HIDING, SHOWN, SHOWING }
+    public enum ORIENTATION { TOP, RIGHT, BOTTOM, LEFT }
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
@@ -16,10 +17,12 @@ namespace SPACEGAME
         TextureManager TM;
         map M;
         HudManager HM;
+        ActionManager AM;
+        Action A;
         DateTime DT;
         Globals G;
-        SpriteFont defaultFont;
-        int elapsedSeconds = 0;
+        int elapsedSeconds;
+        bool newAction;
 
         public Game1()
         {
@@ -58,14 +61,18 @@ namespace SPACEGAME
         {
             populateTextureManager();
 
-            defaultFont = Content.Load<SpriteFont>("Arial");
+            //defaultFont = Content.Load<SpriteFont>("Arial");
             DT = new DateTime();
             M = new map("no bias", TM.tileTextures);
             G = new Globals();
             HM = new HudManager(TM);
+            AM = new ActionManager();
+            A = null;
+            newAction = false;
+            elapsedSeconds = 0;
             G.graphicsWidth = 1280;
             G.graphicsHeight = 720;
-            G.tileSize = 40;
+            G.tileSize = 20;
             G.timeStamp = 0;
             G.movementCooldown = 100;
             G.mouseText = "";
@@ -90,6 +97,13 @@ namespace SPACEGAME
             TM.UI.Add(Content.Load<Texture2D>("UI/show"));
             TM.UI.Add(Content.Load<Texture2D>("UI/hide"));
             TM.UI.Add(Content.Load<Texture2D>("UI/blackBar"));
+            TM.UI.Add(Content.Load<Texture2D>("UI/housing"));
+
+            //fonts
+            TM.fonts.Add(Content.Load<SpriteFont>("Arial"));
+
+            //mouse cursor
+            TM.crosshair = Content.Load<Texture2D>("UI/crosshair");
         }
 
         /// <summary>
@@ -128,10 +142,22 @@ namespace SPACEGAME
             G.mouseX = pos.X;
             G.mouseY = pos.Y;
 
-            //how about left click?
-            if (mouseState.LeftButton == ButtonState.Released)
+
+            //check for left click DOWN
+            if (mouseState.LeftButton == ButtonState.Pressed)
+            {
+                //prepare for a new action
+                newAction = true;
+            }
+            if (mouseState.LeftButton == ButtonState.Released && newAction == true)
             {
                 /*SOME CLICK ACTION*/
+                A = AM.interpretClick(G,HM);
+                
+                if (A != null)
+                { A.doAction(TM, HM); }
+
+                newAction = false;
             }
 
             //populate flavor text
@@ -140,6 +166,12 @@ namespace SPACEGAME
             //get current seconds
             elapsedSeconds = (int)gameTime.TotalGameTime.TotalSeconds;
             DT.updateDay(elapsedSeconds);
+
+            //update hud
+            HM.update();
+            //change hud text
+            HM.changeText(M.getCamX(), M.getCamY(), DT.getDay());
+
 
             base.Update(gameTime);
         }
@@ -174,19 +206,30 @@ namespace SPACEGAME
                 }
             }
 
-            //draw TEXT
-            if (!G.mouseText.Equals(""))
-            {
-                //draw box
-                //spriteBatch.DrawString(defaultFont, G.mouseText,new Vector2((G.mouseX + 5), (G.mouseY+5)),Color.White, 0, new Vector2(0, 0), 1f, SpriteEffects.None,0);
-                //spriteBatch.DrawString(defaultFont, G.mouseSubText, new Vector2((G.mouseX +5), (G.mouseY+25)), Color.White,0,new Vector2(0,0),1f,SpriteEffects.None,0);
-            }
-
+            //draw all HUD elements
             for (i = 0; i < HM.hudGraphicsCount(); i++)
             {
+                //ignore hidden stuff
+                if (HM.getGraphicAt(i).getState() == VISIBILITY.HIDDEN)
+                { continue; }
+
                 HudGraphic HG = HM.getGraphicAt(i);
-                spriteBatch.Draw(HG.getTexture(), HG.getPosition(), null, Color.Transparent, 0, Vector2.Zero, 1f, SpriteEffects.None, 1f);
+                spriteBatch.Draw(HG.getTexture(), HG.getPosition(), null, Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, 1f);
             }
+
+            //draw all hud text
+            for (i = 0; i < HM.hudTextCount(); i++)
+            {
+                //ignore hidden stuff
+                if (HM.getTextAt(i).getState() == VISIBILITY.HIDDEN)
+                { continue; }
+
+                HudText HT = HM.getTextAt(i);
+                spriteBatch.DrawString(HT.getFont(), HT.getText(), HT.getPosition(), Color.White, 0, new Vector2(0, 0), 1f, SpriteEffects.None, 0);
+            }
+
+            //draw crosshair
+            spriteBatch.Draw(TM.crosshair, new Vector2(G.mouseX, G.mouseY), null, Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, 1f);
 
             //draw bottom bar
             //spriteBatch.Draw(TM.UI[0], new Vector2(0, 700), null, Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, 1f);

@@ -19,7 +19,7 @@ namespace SPACEGAME
 
         public map(String bias, List<Texture2D> textures)
         {
-            worldSize = 1000;
+            worldSize = 2000;
 
             //camera oriented at center of map
             camX = (worldSize / 2);
@@ -137,15 +137,15 @@ namespace SPACEGAME
             int width = 1;
             int height = 1;
 
-            int biomeCount = 14;
+            int biomeCount = 21;
             //default: no bias
-            lushCount = 2;
-            desertCount = 2;
-            jungleCount = 2;
-            mountainCount = 2;
-            snowCount = 2;
-            twilightCount = 2;
-            hellCount = 2;
+            lushCount = 3;
+            desertCount = 3;
+            jungleCount = 3;
+            mountainCount = 3;
+            snowCount = 3;
+            twilightCount = 3;
+            hellCount = 3;
 
             for(i = 0; i < biomeCount; i++)
             {

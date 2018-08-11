@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/UI/show.png</SourceFile>
-  <SourceTime>2018-07-06T17:37:14.1046699-07:00</SourceTime>
-  <DestFile>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/bin/Windows/UI/show.xnb</DestFile>
-  <DestTime>2018-08-10T17:12:33.6150883-07:00</DestTime>
+  <SourceFile>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/UI/crosshair.png</SourceFile>
+  <SourceTime>2018-08-10T18:03:44.354599-07:00</SourceTime>
+  <DestFile>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/bin/Windows/UI/crosshair.xnb</DestFile>
+  <DestTime>2018-08-10T18:04:04.3936904-07:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T07:05:36-08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

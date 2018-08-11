@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/CUSTOM SOFTWARE/SPACEGAME/Content/tiles/lush.png</SourceFile>
-  <SourceTime>2018-06-08T17:56:20.5079942-07:00</SourceTime>
-  <DestFile>C:/CUSTOM SOFTWARE/SPACEGAME/Content/bin/Windows/tiles/lush.xnb</DestFile>
-  <DestTime>2018-06-08T17:57:07.548224-07:00</DestTime>
+  <SourceFile>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/tiles/lush.png</SourceFile>
+  <SourceTime>2018-08-10T17:11:25.9971784-07:00</SourceTime>
+  <DestFile>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/bin/Windows/tiles/lush.xnb</DestFile>
+  <DestTime>2018-08-10T17:12:33.409935-07:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T07:05:36-08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
