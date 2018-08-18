@@ -30,12 +30,10 @@ namespace SPACEGAME
                 if (HM.getGraphicAt(i).getClickBox().Intersects(mousePos))
                 {
                     A = HM.getGraphicAt(i).getAction();
-                    int butts = 69;
+                    A.setIndex(i);
                 }
             }
             
-
-
             return A;
         }
     }

@@ -72,3 +72,16 @@ C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\SharpDX.XInput.xml
 C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\CUSTOM SOFTWARE\Github\SPACEGAME\obj\x86\Debug\SPACEGAME.csprojResolveAssemblyReference.cache
 C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\Content\UI\crosshair.xnb
+C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\Content\submenu\domicile.xnb
+C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\Content\submenu\fortress.xnb
+C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\Content\submenu\log.xnb
+C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\Content\submenu\manor.xnb
+C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\Content\submenu\tent.xnb
+C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\Content\submenu\yurt.xnb
+C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\Content\submenu\logcabin.xnb
+C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\Content\shelters\domicile.xnb
+C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\Content\shelters\fortress.xnb
+C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\Content\shelters\logcabin.xnb
+C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\Content\shelters\manor.xnb
+C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\Content\shelters\tent.xnb
+C:\CUSTOM SOFTWARE\Github\SPACEGAME\bin\Windows\x86\Debug\Content\shelters\yurt.xnb

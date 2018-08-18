@@ -14,12 +14,14 @@ namespace SPACEGAME
         private List<HudText> texts;
         private List<HudGraphic> graphics;
         private bool showing;
+        private string subMenuBias;
 
         public HudManager(TextureManager TM)
         {
             texts = new List<HudText>();
             graphics = new List<HudGraphic>();
             showing = true;
+            subMenuBias = "";
             startup(TM);
         }
 
@@ -29,23 +31,23 @@ namespace SPACEGAME
             //GRAPHICS
 
             //create show/hide button
-            HudGraphic showHide = new HudGraphic(new Vector2(1200, 0), new Vector2(80, 20), VISIBILITY.SHOWN, ORIENTATION.TOP, TM.UI[1], new showHide());
+            HudGraphic showHide = new HudGraphic("showHide", new Vector2(1200, 0), new Vector2(80, 20), VISIBILITY.SHOWN, ORIENTATION.TOP, TM.UI[1], new showHide());
 
             //create top bar
             //HudGraphic topBar = new HudGraphic(new Vector2(0, 0), new Vector2(1280,20), VISIBILITY.SHOWN, ORIENTATION.TOP, TM.UI[2]);
 
             //housing submenu icon
-            HudGraphic housing = new HudGraphic(new Vector2(0, 0), new Vector2(40, 20), VISIBILITY.SHOWN, ORIENTATION.TOP, TM.UI[3], new doNothing());
+            HudGraphic shelter = new HudGraphic("shelter", new Vector2(0, 0), new Vector2(40, 20), VISIBILITY.SHOWN, ORIENTATION.TOP, TM.UI[3], new createSubMenu("shelter"));
 
 
 
             //create bottom bar
-            HudGraphic bottomBar = new HudGraphic(new Vector2(0, 700), new Vector2(1280, 20), VISIBILITY.SHOWN, ORIENTATION.BOTTOM, TM.UI[2], new doNothing());
+            HudGraphic bottomBar = new HudGraphic("bottomBar", new Vector2(0, 700), new Vector2(1280, 20), VISIBILITY.SHOWN, ORIENTATION.BOTTOM, TM.UI[2], new doNothing());
 
             graphics.Add(showHide);
             graphics.Add(bottomBar);
             //graphics.Add(topBar);
-            graphics.Add(housing);
+            graphics.Add(shelter);
 
 
             //TEXT
@@ -69,6 +71,22 @@ namespace SPACEGAME
 
         public List<HudGraphic> getGraphics()
         { return graphics; }
+
+        public int hudTextCount()
+        { return texts.Count; }
+
+        public int hudGraphicsCount()
+        { return graphics.Count; }
+
+        public HudGraphic getGraphicAt(int index)
+        {
+            return graphics[index];
+        }
+
+        public HudText getTextAt(int index)
+        {
+            return texts[index];
+        }
 
         public void show()
         {
@@ -126,20 +144,18 @@ namespace SPACEGAME
             texts[1].setText(date);
         }
 
-        public int hudTextCount()
-        { return texts.Count; }
-
-        public int hudGraphicsCount()
-        { return graphics.Count; }
-
-        public HudGraphic getGraphicAt(int index)
+        public void createSubMenu(TextureManager TM, string bias)
         {
-            return graphics[index];
-        }
+            SubMenu SMM = null;
 
-        public HudText getTextAt(int index)
-        {
-            return texts[index];
+            if (bias.Equals("shelter"))
+            {
+                SMM = new Shelter(TM);
+                graphics = SMM.createSubMenu(bias, graphics);
+            }
+
+            subMenuBias = bias;
+            return;
         }
         
     }

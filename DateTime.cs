@@ -9,12 +9,10 @@ namespace SPACEGAME
     class DateTime
     {
         private int day;
-        private int year;
 
         public DateTime()
         {
             day = 0;
-            year = 0;
         }
 
         public void setDay(int newDay)

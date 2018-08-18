@@ -44,14 +44,18 @@
     <Compile Include="Action.cs" />
     <Compile Include="ActionManager.cs" />
     <Compile Include="Biome.cs" />
+    <Compile Include="CompositeColonist.cs" />
     <Compile Include="DateTime.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="HudElement.cs" />
     <Compile Include="HudManager.cs" />
     <Compile Include="map.cs" />
+    <Compile Include="Organism.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structure.cs" />
+    <Compile Include="SubMenu.cs" />
     <Compile Include="TextureManager.cs" />
     <Compile Include="tile.cs" />
   </ItemGroup>

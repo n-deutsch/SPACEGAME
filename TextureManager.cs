@@ -14,6 +14,8 @@ namespace SPACEGAME
         public List<Texture2D> tileTextures;
         public List<SpriteFont> fonts;
         public List<Texture2D> UI;
+        public List<Texture2D> submenu;
+        public List<Texture2D> shelters;
         public Texture2D crosshair;
 
         public TextureManager()
@@ -21,6 +23,10 @@ namespace SPACEGAME
             tileTextures = new List<Texture2D>();
             fonts = new List<SpriteFont>();
             UI = new List<Texture2D>();
+            submenu = new List<Texture2D>();
+            shelters = new List<Texture2D>();
+
+            crosshair = null;
         }
     }
 }

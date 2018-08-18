@@ -17,5 +17,17 @@
     <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/tiles/snow.png</File>
     <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/tiles/twilight.png</File>
     <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/UI/crosshair.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/submenu/domicile.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/submenu/fortress.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/submenu/manor.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/submenu/tent.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/submenu/yurt.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/submenu/logcabin.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/shelters/domicile.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/shelters/fortress.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/shelters/logcabin.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/shelters/manor.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/shelters/tent.png</File>
+    <File>C:/CUSTOM SOFTWARE/Github/SPACEGAME/Content/shelters/yurt.png</File>
   </SourceFiles>
 </SourceFileCollection>

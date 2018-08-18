@@ -11,6 +11,7 @@ namespace SPACEGAME
 {
     class HudElement
     {
+        protected string name;
         protected Vector2 origin;
         protected Vector2 position;
         protected Vector2 size;
@@ -19,8 +20,10 @@ namespace SPACEGAME
         protected ORIENTATION orientation;
         protected Action action;
 
+
         public HudElement()
         {
+            name = "";
             position = new Vector2(0, 0);
             origin = position;
             size = position;
@@ -28,6 +31,12 @@ namespace SPACEGAME
             orientation = ORIENTATION.TOP;
             action = null;
         }
+
+        public string getName()
+        { return name; }
+
+        public void setName(string n)
+        { name = n; }
 
         public VISIBILITY getState()
         { return state; }
@@ -53,6 +62,18 @@ namespace SPACEGAME
         public Action getAction()
         { return action; }
 
+        public void setOrientation(ORIENTATION o)
+        { orientation = o; }
+
+        public ORIENTATION getOrientation()
+        { return orientation; }
+
+        public void setSize(Vector2 sz)
+        { size = sz; }
+
+        public Vector2 getSize()
+        { return size; }
+
         public void updateClickBox()
         {
             Point Pos = new Point((int)position.X, (int)position.Y);
@@ -63,6 +84,17 @@ namespace SPACEGAME
         //move on screen
         public void show()
         {
+            //not everything slides onto the screen gracefully, here's the case for that...
+            if (orientation == ORIENTATION.NONE)
+            {
+                position.X = origin.X;
+                position.Y = origin.Y;
+                updateClickBox();
+                state = VISIBILITY.SHOWN;
+                return;
+            }
+
+
             state = VISIBILITY.SHOWING;
 
                 if (orientation == ORIENTATION.TOP)
@@ -100,7 +132,15 @@ namespace SPACEGAME
         //move off screen
         public void hide()
         {
-            //this is a bit more tricky since objects have a different size....
+            //not everything slides off the screen gracefully - here's the case for submenu items
+            if (orientation == ORIENTATION.NONE)
+            {
+                position.X = -1000;
+                position.Y = -1000;
+                updateClickBox();
+                state = VISIBILITY.HIDDEN;
+                return;
+            }
 
             state = VISIBILITY.HIDING;
 
@@ -153,16 +193,20 @@ namespace SPACEGAME
     class HudGraphic: HudElement
     {
         protected Texture2D texture;
+        protected bool clicked;
 
         public HudGraphic()
         {
+            name = "";
             position = new Vector2(0, 0);
             state = VISIBILITY.HIDDEN;
             texture = null;
+            clicked = false;
         }
 
-        public HudGraphic(Vector2 pos, Vector2 siz, VISIBILITY vis, ORIENTATION ort, Texture2D tex, Action a)
+        public HudGraphic(string n, Vector2 pos, Vector2 siz, VISIBILITY vis, ORIENTATION ort, Texture2D tex, Action a)
         {
+            name = n;
             position = pos;
             origin = pos;
             size = siz;
@@ -170,6 +214,9 @@ namespace SPACEGAME
             orientation = ort;
             texture = tex;
             action = a;
+
+            //always not clicked on creation...
+            clicked = false;
 
             //set up clickbox
             Point Pos = new Point((int)pos.X, (int)pos.Y);

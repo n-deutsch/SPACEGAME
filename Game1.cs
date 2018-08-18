@@ -6,7 +6,7 @@ namespace SPACEGAME
 {
     public enum DIRECTION { NONE, NORTH, SOUTH, EAST, WEST };
     public enum VISIBILITY { HIDDEN, HIDING, SHOWN, SHOWING }
-    public enum ORIENTATION { TOP, RIGHT, BOTTOM, LEFT }
+    public enum ORIENTATION { TOP, RIGHT, BOTTOM, LEFT, NONE }
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
@@ -99,6 +99,22 @@ namespace SPACEGAME
             TM.UI.Add(Content.Load<Texture2D>("UI/blackBar"));
             TM.UI.Add(Content.Load<Texture2D>("UI/housing"));
 
+            //submenu elements
+            TM.submenu.Add(Content.Load<Texture2D>("submenu/tent"));
+            TM.submenu.Add(Content.Load<Texture2D>("submenu/yurt"));
+            TM.submenu.Add(Content.Load<Texture2D>("submenu/logcabin"));
+            TM.submenu.Add(Content.Load<Texture2D>("submenu/domicile"));
+            TM.submenu.Add(Content.Load<Texture2D>("submenu/manor"));
+            TM.submenu.Add(Content.Load<Texture2D>("submenu/fortress"));
+
+            //shelters
+            TM.shelters.Add(Content.Load<Texture2D>("shelters/tent"));
+            TM.shelters.Add(Content.Load<Texture2D>("shelters/yurt"));
+            TM.shelters.Add(Content.Load<Texture2D>("shelters/logcabin"));
+            TM.shelters.Add(Content.Load<Texture2D>("shelters/domicile"));
+            TM.shelters.Add(Content.Load<Texture2D>("shelters/manor"));
+            TM.shelters.Add(Content.Load<Texture2D>("shelters/fortress"));
+
             //fonts
             TM.fonts.Add(Content.Load<SpriteFont>("Arial"));
 
@@ -170,7 +186,7 @@ namespace SPACEGAME
             //update hud
             HM.update();
             //change hud text
-            HM.changeText(M.getCamX(), M.getCamY(), DT.getDay());
+            HM.changeText(M.  getCamX(), M.getCamY(), DT.getDay());
 
 
             base.Update(gameTime);
